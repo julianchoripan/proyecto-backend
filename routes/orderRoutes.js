@@ -29,7 +29,7 @@ router.get(
 router.post(
   "/api/orders",
   expressjwt({ secret: jwtSecret, algorithms: ["HS256"] }),
-  //orderValidation.create,
+  orderValidation.create,
   orderController.createOrder
 );
 router.patch(
