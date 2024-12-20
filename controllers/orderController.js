@@ -1,5 +1,6 @@
 import Order from "../models/Order.js";
 import Product from "../models/Product.js";
+import User from "../models/User.js";
 //import { validationResult } from "express-validator";
 
 async function getAll(req, res) {
@@ -177,5 +178,5 @@ export default {
   createOrder,
   updateOrder,
   destroyOrder,
-  //getAllOrderDeleted,
+  getAllOrderDeleted,
 };
