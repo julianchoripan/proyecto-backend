@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734629081602" clover="3.2.0">
-  <project timestamp="1734629081603" name="All files">
-    <metrics statements="118" coveredstatements="106" conditionals="42" coveredconditionals="37" methods="14" coveredmethods="13" elements="174" coveredelements="156" complexity="0" loc="118" ncloc="118" packages="3" files="6" classes="6"/>
+<coverage generated="1734705167084" clover="3.2.0">
+  <project timestamp="1734705167084" name="All files">
+    <metrics statements="125" coveredstatements="113" conditionals="44" coveredconditionals="39" methods="15" coveredmethods="14" elements="184" coveredelements="166" complexity="0" loc="125" ncloc="125" packages="3" files="8" classes="8"/>
     <package name="controllers">
       <metrics statements="101" coveredstatements="92" conditionals="38" coveredconditionals="33" methods="11" coveredmethods="11"/>
       <file name="authController.js" path="C:\Users\Usuario\Desktop\proyecto-backend\controllers\authController.js">
@@ -116,7 +116,7 @@
       </file>
     </package>
     <package name="middleware">
-      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <file name="adminValidator.js" path="C:\Users\Usuario\Desktop\proyecto-backend\middleware\adminValidator.js">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="4" count="3" type="stmt"/>
@@ -134,9 +134,22 @@
         <line num="61" count="4" type="stmt"/>
         <line num="63" count="1" type="stmt"/>
       </file>
+      <file name="productsValidator.js" path="C:\Users\Usuario\Desktop\proyecto-backend\middleware\productsValidator.js">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
     </package>
     <package name="models">
-      <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="8" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Product.js" path="C:\Users\Usuario\Desktop\proyecto-backend\models\Product.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+      </file>
       <file name="User.js" path="C:\Users\Usuario\Desktop\proyecto-backend\models\User.js">
         <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>

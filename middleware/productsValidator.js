@@ -1,4 +1,4 @@
-import { body } from "express-validator";
+import { body, validationResult } from "express-validator";
 
 const productValidation = {
   create: [
@@ -14,26 +14,33 @@ const productValidation = {
       .notEmpty()
       .withMessage("El campo price  es obligatorio")
       .isNumeric("El valor price debe ser numerico"),
-      body("brand")
+    body("brand")
       .notEmpty()
       .withMessage("El campo brand es obligatorio")
       .isString("El valor brand debe ser un string"),
-      body("model")
+    body("model")
       .notEmpty()
       .withMessage("El campo model es obligatorio")
       .isString("El valor model debe ser un string"),
-      body("category")
+    body("category")
       .notEmpty()
       .withMessage("El campo category es obligatorio")
       .isString("El valor category debe ser un string"),
-      body("dimensions")
+    body("dimensions")
       .notEmpty()
       .withMessage("El campo dimensions es obligatorio")
       .isString("El valor dimensions debe ser un string"),
-      body("stock")
+    body("stock")
       .notEmpty()
       .withMessage("El campo stock es obligatorio")
       .isNumeric("El valor stock debe ser un string"),
+    async (req, res, next) => {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+      next();
+    },
   ],
 };
 export default productValidation;

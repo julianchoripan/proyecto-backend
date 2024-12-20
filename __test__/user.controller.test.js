@@ -1,5 +1,4 @@
 import { jest } from "@jest/globals";
-//import { validationResult } from "express-validator"; // Importa validationResult
 
 // Mock de los datos del usuario
 const mockUser = {
@@ -34,13 +33,6 @@ jest.unstable_mockModule("../models/User.js", () => {
     },
   };
 });
-
-// Mock de express-validator
-// jest.mock("express-validator", () => ({
-//   validationResult: jest.fn().mockReturnValue({
-//     isEmpty: jest.fn().mockReturnValue(true),
-//   }),
-// }));
 
 // Importar los módulos después de los mocks
 const { default: User } = await import("../models/User.js");
@@ -98,20 +90,6 @@ describe("User Controller with Mocks", () => {
       expect(res.status).toHaveBeenCalledWith(201);
       expect(res.json).toHaveBeenCalledWith(mockUser);
     });
-
-    // it("should return an error if validation fails", async () => {
-    //   validationResult.mockReturnValue({
-    //     isEmpty: () => false,
-    //     array: () => [{ msg: "Error" }],
-    //   });
-
-    //   const req = mockReq();
-    //   const res = mockRes();
-
-    //   await userController.createUser(req, res);
-
-    //   expect(res.json).toHaveBeenCalledWith({ error: [{ msg: "Error" }] });
-    // });
   });
 
   describe("getUserById", () => {

@@ -1,6 +1,6 @@
 import Order from "../models/Order.js";
 import Product from "../models/Product.js";
-import { validationResult } from "express-validator";
+//import { validationResult } from "express-validator";
 
 async function getAll(req, res) {
   try {
@@ -41,27 +41,22 @@ async function getOrderById(req, res) {
 async function createOrder(req, res) {
   //console.log("Req.body--->", req.body);
   try {
-    const result = validationResult(req);
-    if (result.isEmpty()) {
-      //console.log(result);
-
-      const { products, shippingAdress, paymentMethod, total } = req.body;
-      console.log("products--->", products.product);
-      const newOrder = await Order.create({
-        user: req.auth.id,
-        products, //disminuir el producto en entidad productos
-        //total: await calculateTotal(products), //calcular
-        total,
-        shippingAdress,
-        paymentMethod,
-      });
-      //console.log(newOrder);
-      //calculateStock(products);
-      return res.status(201).json({
-        message: "Order created successfully",
-        order: newOrder,
-      });
-    }
+    const { products, shippingAdress, paymentMethod, total } = req.body;
+    console.log("products--->", products.product);
+    const newOrder = await Order.create({
+      user: req.auth.id,
+      products, //disminuir el producto en entidad productos
+      //total: await calculateTotal(products), //calcular
+      total,
+      shippingAdress,
+      paymentMethod,
+    });
+    //console.log(newOrder);
+    //calculateStock(products);
+    return res.status(201).json({
+      message: "Order created successfully",
+      order: newOrder,
+    });
   } catch (error) {
     console.log("Error--->", error);
     return res.status(500).json({ error: error });
@@ -182,5 +177,5 @@ export default {
   createOrder,
   updateOrder,
   destroyOrder,
-  getAllOrderDeleted,
+  //getAllOrderDeleted,
 };
